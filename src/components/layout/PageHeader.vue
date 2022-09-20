@@ -8,7 +8,7 @@
         <el-menu class="el-menu-demo" mode="horizontal" router index="0">
           <el-menu-item index="/product">产品中心</el-menu-item>
           <el-menu-item index="/product">解决方案</el-menu-item>
-          <el-menu-item index="/docs/markdown-page/book">开发文档</el-menu-item>
+          <el-menu-item index="/docs/sms/1-sms">开发文档</el-menu-item>
           <el-menu-item index="/product">产品价格</el-menu-item>
         </el-menu>
       </div>

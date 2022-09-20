@@ -31,7 +31,7 @@
         </el-menu-item>
       </template> -->
 
-      <el-submenu index="">
+      <el-submenu index="/markdown-page">
         <template slot="title">
             <span>短信</span>
         </template>

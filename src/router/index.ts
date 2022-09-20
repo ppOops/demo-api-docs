@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Layout from '../components/layout/Layout.vue'
 import LayoutHome from '../components/layout/LayoutHome.vue'
+import APIDocsLayout from '../components/layout/APIDocsLayout.vue'
 
 Vue.use(VueRouter)
 
@@ -71,15 +72,15 @@ export const routes: Array<Route> = [
   {
     path: '/docs',
     name: 'docs',
-    component: Layout,
-    redirect: '/001',
+    component: APIDocsLayout,
+    redirect: '/',
     meta: { title: 'API文档', icon: 'el-icon-s-data' },
     menu: false,
     children: [
       {
-        path: 'markdown-page/:id',
-        name: 'MarkdownPage',
-        component: () => import(/* webpackChunkName: "about" */ '@/views/MarkdownPage.vue'),
+        path: ':catogory/:doc',
+        name: 'APIDocs',
+        component: () => import(/* webpackChunkName: "APIDocs" */ '@/views/APIDocs.vue'),
         meta: { title: 'markdown', icon: 'el-icon-s-data' }
       },
     ]
