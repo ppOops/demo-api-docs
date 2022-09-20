@@ -1,8 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  dest: "dist/docs",
-  base: "/docs/",
+  // dest: "dist/docs",
+  // base: "/docs/",
   port: 8080,
   themeConfig: {
     nav: [
@@ -10,14 +10,14 @@ module.exports = {
       { text: "API", link: "/api/message/001" },
     ],
     sidebar: {
-      "/": [
-        {
-          title: "Test",
-          children: [
-            "",
-          ],
-        },
-      ],
+      // "/": [
+      //   {
+      //     title: "Test",
+      //     children: [
+      //       "",
+      //     ],
+      //   },
+      // ],
       "/api/": [
         {
           title: "Message",

@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import Layout from '../components/layout/Layout.vue'
 import LayoutHome from '../components/layout/LayoutHome.vue'
 import APIDocsLayout from '../components/layout/APIDocsLayout.vue'
+import APIDocsLayoutV2 from '../views/APIDocsLayoutV2.vue'
 
 Vue.use(VueRouter)
 
@@ -84,6 +85,13 @@ export const routes: Array<Route> = [
         meta: { title: 'markdown', icon: 'el-icon-s-data' }
       },
     ]
+  },
+  {
+    path: '/docs-v2/:catogory/:doc',
+    name: 'docs-v2',
+    component: APIDocsLayoutV2,
+    meta: { title: 'API文档', icon: 'el-icon-s-data' },
+    menu: false,
   },
   {
     path: '/about',

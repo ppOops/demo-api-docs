@@ -201,6 +201,7 @@ export function resolveMatchingConfig (regularPath, config) {
     }
   }
   for (const base in config) {
+    console.log('base', base)
     if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0) {
       return {
         base,
@@ -218,6 +219,7 @@ function ensureEndingSlash (path) {
 }
 
 function resolveItem (item, pages, base, groupDepth = 1) {
+  console.log('resolveItem', item)
   if (typeof item === 'string') {
     return resolvePage(pages, item, base)
   } else if (Array.isArray(item)) {
