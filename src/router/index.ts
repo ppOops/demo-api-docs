@@ -87,7 +87,7 @@ export const routes: Array<Route> = [
     ]
   },
   {
-    path: '/docs-v2/:catogory/:doc',
+    path: '/docs-v2/:catogory/:doc?',
     name: 'docs-v2',
     component: APIDocsLayoutV2,
     meta: { title: 'API文档', icon: 'el-icon-s-data' },

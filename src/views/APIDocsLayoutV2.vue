@@ -6,7 +6,7 @@
       <div class="content">
         <div class="main">
           <div class="markdown-body">
-            <component :is="mdFile"></component>
+            <component :is="mdFile" v-hljs></component>
           </div>
         </div>
       </div>
@@ -17,6 +17,15 @@
 <script>
 import PageHeader from "../components/layout/PageHeader.vue";
 import APIDocsSidebarV2 from "./APIDocsSidebarV2.vue";
+import hljs from 'highlight.js';
+import Vue from "vue";
+
+
+Vue.directive('hljs', el => {
+  let blocks = el.querySelectorAll('pre code');
+  Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+});
+
 
 export default {
   components: {
@@ -81,7 +90,7 @@ export default {
       display: flex;
       flex-direction: column;
       overflow: auto;
-      padding: 20px;
+      padding: 20px 140px;
       .breadcrumb {
         flex-shrink: 0;
         margin-top: 12px;

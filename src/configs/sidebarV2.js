@@ -1,7 +1,7 @@
 const sidebarConfig = [
   {
     title: "短信",
-    path: "/sms",
+    path: "/docs-v2/sms",
     children: [
       { path: "/docs-v2/sms/sms01", title: "短信计费标准" },
       {
@@ -14,15 +14,18 @@ const sidebarConfig = [
   },
   {
     title: "语音",
-    path: "/voice",
+    path: "/docs-v2/voice",
     children: [
       "/docs-v2/voice/voice01",
       "/docs-v2/voice/voice02",
       "/docs-v2/voice/voice03",
     ],
   },
+  {
+    title: "语音群呼",
+    path: "/docs-v2/nxphone",
+  },
 ];
-
 
 const resolvePathMenu = (path) => {
   const title = path.split("/").pop();
@@ -46,8 +49,22 @@ export const apiSidebar = sidebarConfig.map((item) => {
   return {
     title: item.title,
     path: item.path,
-    children: item.children.map((menu) => resolveMenu(menu)),
+    children: item.children && item.children.map((menu) => resolveMenu(menu)),
   };
 });
 
-export const firstDoc = apiSidebar[0].children[0]
+
+export const getFirstDoc = (type) => {
+  const firstDoc = (menu) => {
+      return menu.children && menu.children.length > 0 ? menu.children[0] : menu
+  }
+
+  console.log(type);
+  if(type) {
+    const doc = apiSidebar.find((item) => item.title === type);
+    if(doc) {
+      return firstDoc(doc);
+    }
+  }
+  return firstDoc(apiSidebar[0]);
+};

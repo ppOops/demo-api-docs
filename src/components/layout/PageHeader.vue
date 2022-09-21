@@ -8,7 +8,7 @@
         <el-menu class="el-menu-demo" mode="horizontal" router index="0">
           <el-menu-item index="/product">产品中心</el-menu-item>
           <el-menu-item index="/product">解决方案</el-menu-item>
-          <el-menu-item :index="firstDoc.path">开发文档</el-menu-item>
+          <el-menu-item :index="firstApiDoc.path">开发文档</el-menu-item>
           <el-menu-item index="/product">产品价格</el-menu-item>
         </el-menu>
       </div>
@@ -29,20 +29,24 @@
 </template>
 
 <script>
-  import { firstDoc } from "@/configs/sidebarV2";
+  import { getFirstDoc } from "@/configs/sidebarV2";
 export default {
   name: "PageHeader",
   data() {
     return {
-      firstDoc
     };
   },
 
   components: {},
 
-  computed: {},
+  computed: {
+    firstApiDoc() {
+      return getFirstDoc()
+    }
+  },
 
-  mounted() {},
+  mounted() {
+  },
 
   methods: {},
 };

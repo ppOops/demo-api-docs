@@ -27,6 +27,7 @@ module.exports = {
             "/api/message/001.md",
             "/api/message/002.md",
             "/api/message/003.md",
+            "/api/message/发送语音群呼.md",
           ],
         },
         {
